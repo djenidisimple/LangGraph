@@ -19,6 +19,8 @@ def process(state: AgentState) -> AgentState:
     state["messages"].append(AIMessage(content=response.content))
     print(f"\nAI: {response.content}")
     
+    
+    
     return state
 
 graph = StateGraph(AgentState)
@@ -36,3 +38,14 @@ while user_input != "exit":
     conversation_history = result["messages"]
     user_input = input("Entrer: ")
     
+    
+with open("logging.txt", "w") as file:
+    file.write("Your Conversation Log:\n")
+    for message in conversation_history:
+        if isinstance(message, HumanMessage):
+            file.write(f"you: {message.content}\n")
+        elif isinstance(message, AIMessage):
+            file.write(f"AI: {message.content}\n\n")
+    file.write("End of conversation")
+
+print("Conversation saved to logging.txt")

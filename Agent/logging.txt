@@ -1,0 +1,8 @@
+Your Conversation Log:
+you: Hi, My name is Steve
+AI: Hi Steve! Nice to meet you. How can I assist you today?
+
+you: Good bye!
+AI: Goodbye, Steve! Have a great day!
+
+End of conversation
